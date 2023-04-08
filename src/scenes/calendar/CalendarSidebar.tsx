@@ -6,11 +6,11 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { formatDate } from "@fullcalendar/core";
+import { EventApi, formatDate } from "@fullcalendar/core";
 import { tokens } from "../../theme";
 
 type Props = {
-  currentEvents: Array<any> | undefined;
+  currentEvents: EventApi[] | undefined;
 };
 
 const CalendarSidebar = ({ currentEvents }: Props) => {
@@ -40,11 +40,12 @@ const CalendarSidebar = ({ currentEvents }: Props) => {
                 primary={event.title}
                 secondary={
                   <Typography>
-                    {formatDate(event.start, {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
+                    {event.start &&
+                      formatDate(event.start, {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
                   </Typography>
                 }
               />
