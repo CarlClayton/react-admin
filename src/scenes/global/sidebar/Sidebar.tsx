@@ -157,7 +157,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             {Object.keys(menuItems).map((category, index) => (
-              <>
+              <Box key={index}>
                 <Typography
                   variant="h6"
                   color={colors.grey[300]}
@@ -167,6 +167,7 @@ const Sidebar = () => {
                 </Typography>
                 {menuItems[category].map((item) => (
                   <Item
+                    key={item.title}
                     title={item.title}
                     to={item.to}
                     icon={icons[item.icon]}
@@ -174,7 +175,7 @@ const Sidebar = () => {
                     setSelected={setSelected}
                   />
                 ))}
-              </>
+              </Box>
             ))}
           </Box>
         </Menu>
