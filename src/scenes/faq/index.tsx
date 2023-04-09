@@ -13,7 +13,7 @@ const FAQ = () => {
 
   return (
     <Box m={"20px"}>
-      <Header title="FAQ" subtitle="frequently Asked Questions Page" />
+      <Header title="FAQ" subtitle="Frequently Asked Questions Page" />
       {mockDataQuestions.map((question) => (
         <Accordion key={question} defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
